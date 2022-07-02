@@ -102,6 +102,7 @@
     <Compile Include="Assets\AssetPacks\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\PathFinding\Node.cs" />
     <Compile Include="Assets\PathFinding\GridManager.cs" />
+    <Compile Include="Assets\PathFinding\Pathfinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetPacks\TextMesh Pro\Shaders\TMPro.cginc" />
