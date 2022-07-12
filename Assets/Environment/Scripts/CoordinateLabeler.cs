@@ -18,9 +18,9 @@ public class CoordinateLabeler : MonoBehaviour
 
     private void Awake()
     {
-        label = GetComponent<TextMeshPro>();
-        label.enabled = false;        
         gridManager = FindObjectOfType<GridManager>();
+        label = GetComponent<TextMeshPro>();
+        label.enabled = false;                
         DisplayCoordinates();
     }
     void Update()
@@ -38,8 +38,9 @@ public class CoordinateLabeler : MonoBehaviour
 
     void DisplayCoordinates()
     {
-        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        if (gridManager == null) return;
+        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / gridManager.UnityGridSize);
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / gridManager.UnityGridSize);
         label.text = $"{coordinates.x},{coordinates.y}";
     }
 
@@ -59,7 +60,7 @@ public class CoordinateLabeler : MonoBehaviour
     }
 
     Color colorDecider(Node node)
-    {  
+    {        
         if (!node.isWalkable)
         {
             return blockedColor;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Path
   - Tree
+  - Tile
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Tile
+  - PostProcessing
   - 
   - 
   - 
